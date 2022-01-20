@@ -1,1 +1,2 @@
 # rock-paper-scissors
+Update 1: I am super tempted to just go right to the solution by googling it and figuring out someone else's logic tutorial-style. BUT that doesn't sound too fun, and they may go about it in a way that may have differed from what I could have originally thought of. I'll sketch out problem by dividing it in into sub-problems once I've identified desired outputs, etc.
