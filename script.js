@@ -1,54 +1,52 @@
-// computer choice function with choices array
+//declare variables
+let choices = ["rock", "paper", "scissors"];
+let playerScore = 0;
+let computerScore = 0;
+
+//randomize computer plays using array already declared
 function computerPlay () {
-  const choices = ["rock", "paper", "scissors"];
   const computerSelection = choices[Math.floor(Math.random() * choices.length)];
 
   return computerSelection;
 }
 
-// comp makes a choice
-const computerSelection = computerPlay ()
-//console.log(computerSelection);
-// works.
-
-// user makes a choice - text input
-const userInput = window.prompt("Rock, paper, or scissors?");
-
-//user's choice character modification
-const playerSelection = userInput.toLowerCase();
-
-//give error when player writes something other than choices
-if (playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissors") {
-  alert("That's not a valid choice. Refresh and try again, my dude.");
-};
-//console.log(playerSelection);
-//works.
-
-// single round of RPS
+//single round game; userinput is made lowercase
 function playRound(playerSelection, computerSelection) {
+  playerSelection = playerSelection.toLowerCase();
+  
+  if (playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissors") {
+    alert("That's not a valid choice. Refresh and try again, my dude.");
+  };
   if (playerSelection === computerSelection) {
-    console.log("It's a tie ~")
+    alert("It's a tie ~")
   }
   if (
     (playerSelection === "rock" && computerSelection === "scissors") ||
     (playerSelection === "paper" && computerSelection === "rock") ||
     (playerSelection === "scissors" && computerSelection === "paper")
   ){
-    console.log("You won!")
+    playerScore++;
+    alert("You won!")
   }
   if (
     (computerSelection === "rock" && playerSelection === "scissors") ||
     (computerSelection === "paper" && playerSelection === "rock") ||
     (computerSelection === "scissors" && playerSelection === "paper")
   ){
-    console.log("You lost :/")
+    computerScore++;
+    alert("You lost :/")
   }
 };
 
-// program evaluates user's choice against computer's choice
-console.log(playRound(playerSelection, computerSelection));
+//uses previous function, plays 5 games & keeps score
+function game () {
+  while (playerScore < 5 && computerScore < 5) {
+    let playerSelection = window.prompt("Rock, paper, or scissors?");
+    let computerSelection = computerPlay ();
+    playRound(playerSelection, computerSelection);
+      let score = `Netizen: ${playerScore}, Computer: ${computerScore}`;
+      alert(score);
+  }
+}
 
-//console.log(playerSelection);
-//console.log(computerSelection);
-//used to check function; works.
-
+game();
