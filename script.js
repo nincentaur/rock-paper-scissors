@@ -1,8 +1,4 @@
-//const computerPlay = choices[Math.floor(Math.random() * choices.length)];
-//this works, it's a great solution, but computerPlay is not a function here. ugh.
-
-// computer choice function
-// include array in fuction to make as simple as possible
+// computer choice function with choices array
 function computerPlay () {
   const choices = ["rock", "paper", "scissors"];
   const computerSelection = choices[Math.floor(Math.random() * choices.length)];
@@ -15,24 +11,20 @@ const computerSelection = computerPlay ()
 //console.log(computerSelection);
 // works.
 
-// user makes a choice - input
+// user makes a choice - text input
 const userInput = window.prompt("Rock, paper, or scissors?");
 
-//user's choice is modifed so all letters get transformed to match array choices
+//user's choice character modification
 const playerSelection = userInput.toLowerCase();
 
-//give error when player writes something other than choices in array
+//give error when player writes something other than choices
 if (playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissors") {
   alert("That's not a valid choice. Refresh and try again, my dude.");
 };
 //console.log(playerSelection);
 //works.
 
-//for RPS, there are 4 possible outcomes:
-// 1. tie, 2. rock crushes scissors, 3. paper covers rock, 4. scissors cut paper
-
-// single round of RPS - playRound
-// two parameters: playerSelection, computerSelection
+// single round of RPS
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
     console.log("It's a tie ~")
@@ -53,11 +45,10 @@ function playRound(playerSelection, computerSelection) {
   }
 };
 
+// program evaluates user's choice against computer's choice
+console.log(playRound(playerSelection, computerSelection));
 
 //console.log(playerSelection);
 //console.log(computerSelection);
 //used to check function; works.
-
-// program evaluates user's choice against computer's choice
-console.log(playRound(playerSelection, computerSelection));
 
