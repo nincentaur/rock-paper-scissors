@@ -47,6 +47,12 @@ function game () {
       let score = `Netizen: ${playerScore}, Computer: ${computerScore}`;
       alert(score);
   }
+  while (playerScore == 5) {
+    alert("You've won the match!")
+  }
+  while (computerScore == 5) {
+    alert("You lost the match, my dude. Refresh to try again.")
+  }
 }
 
 game();
