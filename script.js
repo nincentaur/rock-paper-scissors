@@ -15,7 +15,7 @@ function playRound(playerSelection, computerSelection) {
   playerSelection = playerSelection.toLowerCase();
   
   if (playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissors") {
-    alert("That's not a valid choice. Refresh and try again, my dude.");
+    alert("That's not a valid choice. Try again, my dude.");
   };
   if (playerSelection === computerSelection) {
     alert("It's a tie ~")
@@ -51,7 +51,7 @@ function game () {
     alert("You've won the match!")
   }
   while (computerScore == 5) {
-    alert("You lost the match, my dude. Refresh to try again.")
+    alert("You lost the match. But no worries ~ refresh to try again.")
   }
 }
 
